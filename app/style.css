@@ -1,0 +1,168 @@
+TABLE {
+    border-collapse: collapse;
+    text-align: center;
+}
+TD, TH {
+    padding: 3px;
+    border: 1px solid black;
+}
+TH {
+    background: #b0e0e6;
+}
+
+TABLE TR:nth-child(2n) {
+    background-color: #ccc;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.check {
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.form-submit {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sfs {
+    font-size: 13px;
+}
+
+.select-default {
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 26px;
+    outline: none;
+}
+
+#send {
+    margin: 20px 0;
+
+    width: 200px;
+    height: 50px;
+
+    outline: none;
+    user-select: none;
+
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+}
+
+#not-auth {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.login-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.register-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.dash-login {
+    width: 2px;
+    height: 90%;
+    background-color: black;
+}
+
+#login {
+    color: white;
+    background-color: green;
+    outline: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#cnu {
+    color: white;
+    background-color: blue;
+    outline: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.reg-input {
+    margin: 5px;
+}
+
+.user-created {
+    color: greenyellow;
+    border: 1px solid greenyellow;
+}
+
+.dn {
+    display: none !important;
+}
+
+.user-wrong {
+    margin-top: 10px;
+    color: red;
+    border: 1px solid red;
+}
+
+#displayinfo {
+    position: absolute;
+    padding: 10px;
+    top: 5px;
+    left: 5px;
+
+    display: flex;
+    flex-direction: row;
+    border: 1px dotted lawngreen;
+}
+
+#data-sent {
+    position: absolute;
+    top: -15px;
+    padding: 8px;
+    left: 5px;
+    color: green;
+    z-index: 9999;
+    border: 1px solid green;
+}

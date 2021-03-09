@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 id="data-sent" class="dn">Дата Отправлена Успешно!</h2>
+
+<div id="displayinfo">
+    <span>Current&nbsp;User&nbsp;===>&nbsp;</span>
+    <span>mail:&nbsp;<span id="current-userMail"></span></span>
+    <span>&nbsp;||&nbsp;fullname:&nbsp;<span id="current-fio"></span></span>
+</div>
+
+<section id="not-auth">
+    <div class="login-block">
+        <h4>Если вы уже зарегистрированы:</h4>
+        <label for="loginMail">Enter Email:</label><input type="email" id="loginMail" class="reg-input select-default">
+        <label for="loginPass">Enter Password:</label><input type="password" id="loginPass"
+                                                             class="reg-input select-default">
+        <button id="login">Login</button>
+        <span class="user-wrong dn">Wrong data!</span>
+    </div>
+
+    <div class="dash-login"></div>
+
+    <div class="register-block">
+        <h4>Если нет то создайте нового пользователя:</h4>
+        <label for="userMail">Enter Email:</label><input type="email" id="userMail" class="reg-input select-default"
+                                                         required>
+        <label for="userPass">Enter Password:</label><input type="password" id="userPass"
+                                                            class="reg-input select-default"
+                                                            required>
+        <label for="userName">Enter Name:</label><input type="text" id="userName" class="reg-input select-default"
+                                                        required>
+        <label for="userSurname">Enter Surname:</label><input type="text" id="userSurname"
+                                                              class="reg-input select-default"
+                                                              required>
+        <button id="cnu">Create New User</button>
+        <span class="user-created dn">User created!</span>
+    </div>
+</section>
+
+<div method="post" class="form-submit">
+
+    <div class="actionInitiator inner">
+        <label for="aInitiator" class="sfs">Инициатор Акции:&nbsp;</label>
+        <select name="aInitiator" id="aInitiator" class="select-default">
+            <option value="">Выберите инициатора</option>
+            <option value="TM">TM</option>
+            <option value="FM">FM</option>
+            <option value="SM">SM</option>
+        </select>
+    </div>
+
+    <div class="startDate inner">
+        <label for="sdate" class="sfs">Дата Начала Акции:&nbsp;</label>
+        <input type="date" id="sdate" class="select-default">
+    </div>
+
+    <div class="finishDate inner">
+        <label for="fdate" class="sfs">Дата Конца Акции:&nbsp;</label>
+        <input type="date" id="fdate" class="select-default">
+    </div>
+
+    <div class="comment inner">
+        <label for="acomment" class="sfs">Коментарий к акции:&nbsp;</label>
+        <textarea id="acomment" class="select-default"> </textarea>
+    </div>
+
+    <div class="type inner">
+        <label for="aType" class="sfs">Тип акции:&nbsp;</label>
+        <select name="aType" id="aType" class="select-default">
+            <option value="">select aType</option>
+            <option value="CTPR">CTPR</option>
+            <option value="LIVE">LIVE</option>
+            <option value="TRG">TRG</option>
+            <option value="LIVE Товарный">LIVE Товарный</option>
+            <option value="Разовая для Брендов">Разовая для Брендов</option>
+            <option value="Разовая для GCAS">Разовая для GCAS</option>
+            <option value="Контрактная для Брендов">Контрактная для Брендов</option>
+            <option value="Контрактная для GCAS">Контрактная для GCAS</option>
+        </select>
+    </div>
+
+    <div class="additionBudget inner">
+        <label for="budget" class="sfs">Выберите бюджет(кол.):&nbsp;</label>
+        <select name="budget" id="budget" class="select-default">
+            <option value="">select budget</option>
+            <option value="ШТ">ШТ</option>
+            <option value="UAH">UAH</option>
+        </select>
+    </div>
+
+    <div class="actionTypeAddition inner">
+        <label for="aTypeAddition" class="sfs">Тип акции(доп.):&nbsp;</label>
+        <select name="aTypeAddition" id="aTypeAddition" class="select-default">
+            <option value="">Тип акции(доп.)</option>
+            <option value="ISISCorp">ISISCorp</option>
+            <option value="Тwin">Тwin</option>
+        </select>
+    </div>
+
+    <div class="actionTypeLocal inner">
+        <label for="aTypeRange" class="sfs">Тип акции(лок.):&nbsp;</label>
+        <select name="aTypeRange" id="aTypeRange" class="select-default">
+            <option value="">Тип акции(лок.)</option>
+            <option value="Национальная">Национальная</option>
+            <option value="Локальная">Локальная</option>
+            <option value="Национальная РАСПРОДАЖА">Национальная РАСПРОДАЖА</option>
+            <option value="Локальная РАСПРОДАЖА">Локальная РАСПРОДАЖА</option>
+        </select>
+    </div>
+
+    <div class="budgetValue inner" >
+        <label for="budgetVal" class="sfs">Бюджет(числ.):&nbsp;</label>
+        <input type="number" name="budgetVal" id="budgetVal" class="select-default"/>
+    </div>
+
+    <div class="cc1 inner">
+        <label for="cbf" class="sfs">Кто подтверждает Изменения Бюджета Филиала:&nbsp;</label>
+        <select name="cbf" id="cbf" class="select-default">
+            <option value="">type</option>
+            <option value="Трейд маркетолог">Трейд маркетолог</option>
+            <option value="FM">FM</option>
+            <option value="SM">SM</option>
+        </select>
+    </div>
+
+    <div class="cc2 inner">
+        <label for="cbt" class="sfs">Кто подтверждает Изменения Бюджета ТТ:&nbsp;</label>
+        <select name="cbt" id="cbt" class="select-default">
+            <option value="">type</option>
+            <option value="Трейд маркетолог">Трейд маркетолог</option>
+            <option value="FM">FM</option>
+            <option value="SM">SM</option>
+        </select>
+    </div>
+
+    <div class="cc3 inner">
+        <label for="cbc" class="sfs">Кто подтверждает Добавление/Удаление CSKU:&nbsp;</label>
+        <select name="cbc" id="cbc" class="select-default">
+            <option value="">type</option>
+            <option value="Трейд маркетолог">Трейд маркетолог</option>
+            <option value="FM">FM</option>
+            <option value="SM">SM</option>
+        </select>
+    </div>
+
+    <div class="budgetPercent inner">
+        <label for="budgetType" class="sfs">Бюджет(%):&nbsp;</label>
+        <input type="number" name="budgetType" id="budgetType" class="select-default"/>
+    </div>
+
+    <div class="discount inner">
+        <label for="discount" class="sfs">Скидка(%):&nbsp;</label>
+        <input type="number" name="discount" id="discount" class="select-default"/>
+    </div>
+
+    <div class="managerEmail inner">
+        <label for="manager" class="sfs">Manager Email:&nbsp;</label>
+        <select name="manager" id="manager" class="select-default">
+            <option value="">select email</option>
+        </select>
+    </div>
+
+    <div class="productClass inner">
+        <label for="prod" class="sfs">Product:&nbsp;</label>
+        <select name="prod" id="prod" class="select-default">
+            <option value="">select product</option>
+        </select>
+    </div>
+
+    <div class="markClass inner">
+        <label for="mark" class="sfs">Mark:&nbsp;</label>
+        <select name="mark" id="mark" class="select-default">
+            <option value="">select mark</option>
+        </select>
+    </div>
+
+    <button type="submit" id="send">Send</button>
+
+</div>
+
+<table class="table" id="tbl">
+    <tr>
+        <th>SortNO</th>
+        <th>CSKUID</th>
+        <th>CSKU</th>
+        <th>ItemName</th>
+        <th>Send</th>
+    </tr>
+</table>
+
+<script src="./auth.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
